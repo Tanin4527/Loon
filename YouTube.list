@@ -1,31 +1,27 @@
 # NAME: YouTube
-# AUTHOR: Ethan Tan
-# DESCRIPTION: YouTube服务分流规则。
+# AUTHOR: Tanin
+# DESCRIPTION: YouTube 核心服务分流规则 (包含 YouTube, YouTube Music, YouTube Kids)。此规则以域名为核心，特别是 googlevideo.com，以实现最精确的视频流分离。
 # UPDATED: 2025-08-17
 # DOMAIN: 2
-# DOMAIN-KEYWORD: 0
-# DOMAIN-SUFFIX: 13
-# USER-AGENT: 3
+# DOMAIN-KEYWORD: 3
+# DOMAIN-SUFFIX: 6
+# USER-AGENT: 2
 # IP-CIDR: 0
-# TOTAL: 18
+# TOTAL: 13
 
-DOMAIN,youtube.com
-DOMAIN,video.google.com
+DOMAIN-KEYWORD,youtube
+DOMAIN-KEYWORD,youtu.be
+DOMAIN-KEYWORD,googlevideo
 
-DOMAIN-SUFFIX,ytimg.com
+DOMAIN,youtubei.googleapis.com
+DOMAIN,youtube.googleapis.com
+
 DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,youtubekids.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,ytstatic.com
 DOMAIN-SUFFIX,yt3.ggpht.com
-DOMAIN-SUFFIX,youtubei.googleapis.com
-DOMAIN-SUFFIX,youtube-ui.l.google.com
-DOMAIN-SUFFIX,youtube.googleapis.com
-DOMAIN-SUFFIX,accounts.youtube.com
-DOMAIN-SUFFIX,ads.youtube.com
-DOMAIN-SUFFIX,music.youtube.com
-DOMAIN-SUFFIX,m.youtube.com
-DOMAIN-SUFFIX,studio.youtube.com
-DOMAIN-SUFFIX,tv.youtube.com
-DOMAIN-SUFFIX,upload.youtube.com
 
 USER-AGENT,YouTube*
-USER-AGENT,Mozilla*Android*
-USER-AGENT,Mozilla*iPhone*
+USER-AGENT,*youtube.com*
