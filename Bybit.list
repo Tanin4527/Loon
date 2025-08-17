@@ -1,0 +1,32 @@
+# NAME: Bybit
+# AUTHOR: Tanin
+# UPDATED: 2025-08-17
+# DESCRIPTION: 全球加密货币交易所 Bybit 的分流规则，旨在覆盖其交易、API、行情和官方网站等核心服务。
+# DOMAIN: 0
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 11
+# IP-CIDR: 0
+# TOTAL: 12
+
+# --- 核心关键词 ---
+# 功能：通过关键词匹配，捕获所有 bybit 的相关域名和子域名。
+DOMAIN-KEYWORD,bybit
+
+# --- 核心服务与地区域名 ---
+# 功能：明确指定 bybit 的主域名和各地区专用域名，确保在任何地区都能准确连接。
+DOMAIN-SUFFIX,bybit.com
+DOMAIN-SUFFIX,bybit.nl
+DOMAIN-SUFFIX,bybit-tr.com
+DOMAIN-SUFFIX,bybit.kz
+DOMAIN-SUFFIX,byhkbit.com
+
+# --- API & Websocket 服务 ---
+# 功能：覆盖行情数据、交易执行等核心API接口。
+DOMAIN-SUFFIX,bybit-exchange.github.io
+
+# --- 第三方及CDN服务 ---
+# 功能：包含一些已知的第三方服务和CDN加速域名，确保App功能完整。
+DOMAIN-SUFFIX,bycs.io
+DOMAIN-SUFFIX,hcaptcha.com
+DOMAIN-SUFFIX,jselivr.net
+DOMAIN-SUFFIX,pstatp.com
