@@ -1,34 +1,15 @@
 # NAME: Google
-# AUTHOR: Ethan Tan
-# DESCRIPTION: 谷歌核心服务分流规则，不包含YouTube。
+# AUTHOR: Ethan Tan (Optimized by Tanin)
+# DESCRIPTION: 谷歌核心服务分流规则 (已修正并精确排除 YouTube)。
 # UPDATED: 2025-08-17
-# DOMAIN: 17
-# DOMAIN-KEYWORD: 4
-# DOMAIN-SUFFIX: 28
-# USER-AGENT: 13
-# IP-CIDR: 24
-# TOTAL: 86
-
-DOMAIN,android.clients.google.com
-DOMAIN,dl.google.com
-DOMAIN,fonts.googleapis.com
-DOMAIN,google.cn
-DOMAIN,www.google.com
-DOMAIN,gmail.com
-DOMAIN,drive.google.com
-DOMAIN,maps.googleapis.com
-DOMAIN,play.google.com
-DOMAIN,play.googleapis.com
-DOMAIN,assistant.google.com
-DOMAIN,pay.google.com
-DOMAIN,wallet.google.com
-DOMAIN,domains.googleapis.com
-DOMAIN,cloud.google.com
-DOMAIN,googleapis.l.google.com
-DOMAIN,clients.l.google.com
+# DOMAIN: 0
+# DOMAIN-KEYWORD: 3
+# DOMAIN-SUFFIX: 29
+# USER-AGENT: 9
+# IP-CIDR: 4
+# TOTAL: 45
 
 DOMAIN-KEYWORD,google
-DOMAIN-KEYWORD,googlevideo
 DOMAIN-KEYWORD,googlemail
 DOMAIN-KEYWORD,googleusercontent
 
@@ -43,6 +24,7 @@ DOMAIN-SUFFIX,g.co
 DOMAIN-SUFFIX,g.page
 DOMAIN-SUFFIX,gcr.io
 DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,gmail.com
 DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,gvt2.com
 DOMAIN-SUFFIX,gvt3.com
@@ -50,16 +32,16 @@ DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,google-analytics.com
 DOMAIN-SUFFIX,googleadservices.com
 DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,googlecnapps.cn
 DOMAIN-SUFFIX,googlesyndication.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,picasaweb.com
+DOMAIN-SUFFIX,play.google.com
 DOMAIN-SUFFIX,recaptcha.net
-DOMAIN-SUFFIX,googleusercontent.com
-DOMAIN-SUFFIX,googlemail.com
 DOMAIN-SUFFIX,trae.ai
-DOMAIN-SUFFIX,ttlive.ly
+DOMAIN-SUFFIX,widevine.com
 
 USER-AGENT,Google*
 USER-AGENT,Googlebot*
@@ -69,30 +51,12 @@ USER-AGENT,Storebot-Google*
 USER-AGENT,Google-InspectionTool*
 USER-AGENT,GoogleOther*
 USER-AGENT,Google-CloudVertexBot*
-USER-AGENT,*Gmail Actions*
 USER-AGENT,Android-Finsky*
-USER-AGENT,*Chrome*Mobile Safari*
-USER-AGENT,*Chrome*Safari*
-USER-AGENT,*Android*Xoom*
 
 IP-CIDR,8.8.4.4/32
 IP-CIDR,8.8.8.8/32
-IP-CIDR,34.0.0.0/8
-IP-CIDR,35.192.0.0/12
-IP-CIDR,64.18.0.0/15
-IP-CIDR,64.233.160.0/19
-IP-CIDR,66.102.0.0/20
-IP-CIDR,72.14.192.0/18
 IP-CIDR,74.125.0.0/16
-IP-CIDR,108.177.8.0/21
-IP-CIDR,2001:4860:4860::8888/128
-IP-CIDR,2001:4860:4860::8844/128
-IP-CIDR,199.36.153.8/30
-IP-CIDR,34.126.0.0/18
-IP-CIDR,2600:2d00:0002:2000::/64
-IP-CIDR,2001:4860:8040::/42
-IP-CIDR,199.36.153.4/30
-IP-CIDR,2600:2d00:0002:1000::/64
+IP-CIDR,172.217.0.0/16
 IP-CIDR,35.191.0.0/16
 IP-CIDR,130.211.0.0/22
 IP-CIDR,173.194.0.0/16
