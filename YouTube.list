@@ -1,15 +1,31 @@
 # NAME: YouTube
 # AUTHOR: Ethan Tan
-# DESCRIPTION: 专用于YouTube服务的流量分流规则。
-# UPDATED: 2025-08-17 08:44:57
-# DOMAIN-KEYWORD: 2
-# DOMAIN-SUFFIX: 5
-# TOTAL: 7
+# DESCRIPTION: YouTube服务分流规则。
+# UPDATED: 2025-08-17
+# DOMAIN: 2
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 13
+# USER-AGENT: 3
+# IP-CIDR: 0
+# TOTAL: 18
 
-DOMAIN-SUFFIX,googlevideo.com
-DOMAIN-SUFFIX,youtube.com
-DOMAIN-SUFFIX,youtube-nocookie.com
-DOMAIN-SUFFIX,yt.be
+DOMAIN,youtube.com
+DOMAIN,video.google.com
+
 DOMAIN-SUFFIX,ytimg.com
-DOMAIN-KEYWORD,youtube
-DOMAIN-KEYWORD,youtu
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,yt3.ggpht.com
+DOMAIN-SUFFIX,youtubei.googleapis.com
+DOMAIN-SUFFIX,youtube-ui.l.google.com
+DOMAIN-SUFFIX,youtube.googleapis.com
+DOMAIN-SUFFIX,accounts.youtube.com
+DOMAIN-SUFFIX,ads.youtube.com
+DOMAIN-SUFFIX,music.youtube.com
+DOMAIN-SUFFIX,m.youtube.com
+DOMAIN-SUFFIX,studio.youtube.com
+DOMAIN-SUFFIX,tv.youtube.com
+DOMAIN-SUFFIX,upload.youtube.com
+
+USER-AGENT,YouTube*
+USER-AGENT,Mozilla*Android*
+USER-AGENT,Mozilla*iPhone*
