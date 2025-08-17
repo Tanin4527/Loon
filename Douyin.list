@@ -1,13 +1,15 @@
 # NAME: Douyin
-# AUTHOR: Ethan Tan
-# DESCRIPTION: 抖音服务分流规则。
+# AUTHOR: Ethan Tan (Optimized by Tanin)
+# DESCRIPTION: 抖音服务分流规则。移除了过于宽泛的USER-AGENT规则，并增加了关键词规则以增强匹配能力。
 # UPDATED: 2025-08-17
 # DOMAIN: 1
-# DOMAIN-KEYWORD: 0
+# DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 26
-# USER-AGENT: 4
+# USER-AGENT: 2
 # IP-CIDR: 0
-# TOTAL: 31
+# TOTAL: 30
+
+DOMAIN-KEYWORD,douyin
 
 DOMAIN,douyin.com
 
@@ -39,6 +41,4 @@ DOMAIN-SUFFIX,webcast5-open-lq.douyin.com
 DOMAIN-SUFFIX,snssdk.com
 
 USER-AGENT,Douyin*
-USER-AGENT,Mozilla*Android*
-USER-AGENT,Mozilla*iPhone*
 USER-AGENT,musical_ly_*
