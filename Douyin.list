@@ -1,28 +1,44 @@
 # NAME: Douyin
 # AUTHOR: Ethan Tan
-# DESCRIPTION: 抖音服务综合分流规则，包含其CDN、API及相关域名。
-# UPDATED: 2025-08-17 09:37:03
-# DOMAIN: 5
-# DOMAIN-KEYWORD: 1
-# DOMAIN-SUFFIX: 10
-# USER-AGENT: 1
-# PROCESS-NAME: 1
-# TOTAL: 18
+# DESCRIPTION: 抖音服务分流规则。
+# UPDATED: 2025-08-17
+# DOMAIN: 1
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 26
+# USER-AGENT: 4
+# IP-CIDR: 0
+# TOTAL: 31
 
-DOMAIN,amemv.com
-DOMAIN,p3-amemv.ibyteimg.com
-DOMAIN,p5-amemv.ibyteimg.com
-DOMAIN,v.douyin.com
-DOMAIN,www.douyin.com
-DOMAIN-KEYWORD,douyin
-DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,byte-dance.com
-DOMAIN-SUFFIX,bytedance.com
-DOMAIN-SUFFIX,douyin.com
+DOMAIN,douyin.com
+
 DOMAIN-SUFFIX,douyincdn.com
-DOMAIN-SUFFIX,feishucdn.com
-DOMAIN-SUFFIX,ixigua.com
-DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,douyinvod.com
+DOMAIN-SUFFIX,douyinliving.com
+DOMAIN-SUFFIX,douyinstatic.com
+DOMAIN-SUFFIX,beta-luna.douyin.com
+DOMAIN-SUFFIX,content-open.douyin.com
+DOMAIN-SUFFIX,frontier-im.douyin.com
+DOMAIN-SUFFIX,frontier-pc.douyin.com
+DOMAIN-SUFFIX,im-open.douyin.com
+DOMAIN-SUFFIX,imapi.douyin.com
+DOMAIN-SUFFIX,lf-zt.douyin.com
+DOMAIN-SUFFIX,live.douyin.com
+DOMAIN-SUFFIX,m.douyin.com
+DOMAIN-SUFFIX,open.douyin.com
+DOMAIN-SUFFIX,sso.douyin.com
+DOMAIN-SUFFIX,v.douyin.com
+DOMAIN-SUFFIX,webcast-open.douyin.com
+DOMAIN-SUFFIX,webcast3-ws-web-hl.douyin.com
+DOMAIN-SUFFIX,webcast3-ws-web-lf.douyin.com
+DOMAIN-SUFFIX,webcast3-ws-web-lq.douyin.com
+DOMAIN-SUFFIX,webcast5-open-hl.douyin.com
+DOMAIN-SUFFIX,webcast5-open-lf.douyin.com
+DOMAIN-SUFFIX,webcast5-open-lq.douyin.com
 DOMAIN-SUFFIX,snssdk.com
-USER-AGENT,aweme*
-PROCESS-NAME,com.ss.android.ugc.aweme
+
+USER-AGENT,Douyin*
+USER-AGENT,Mozilla*Android*
+USER-AGENT,Mozilla*iPhone*
+USER-AGENT,musical_ly_*
