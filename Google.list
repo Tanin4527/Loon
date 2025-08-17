@@ -1,65 +1,89 @@
-# NAME: Google
-# AUTHOR: Ethan Tan (Optimized by Tanin)
-# DESCRIPTION: 谷歌核心服务分流规则 (已修正并精确排除 YouTube)。
+# NAME: Google (Maximum Coverage - Excl. YouTube)
+# AUTHOR: Tanin
 # UPDATED: 2025-08-17
+# DESCRIPTION: 谷歌服务最大覆盖范围分流规则。此列表旨在全面覆盖所有非YouTube的谷歌服务、基础设施、广告和关联公司，以确保最高兼容性。使用时，务必将独立的YouTube规则置于此规则之上。
 # DOMAIN: 0
-# DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 29
-# USER-AGENT: 9
+# DOMAIN-KEYWORD: 2
+# DOMAIN-SUFFIX: 49
 # IP-CIDR: 4
-# TOTAL: 45
+# TOTAL: 55
 
+# --- 核心关键词 (2) ---
+# 功能：通过关键词匹配，捕获所有Google和Blogger的地区域名和子域名，这是实现全面覆盖的基础。
 DOMAIN-KEYWORD,google
-DOMAIN-KEYWORD,googlemail
-DOMAIN-KEYWORD,googleusercontent
+DOMAIN-KEYWORD,blogspot
 
-DOMAIN-SUFFIX,2mdn.net
+# --- 核心基础设施与平台 (8) ---
+# 功能：覆盖Google的骨干网(1e100.net)、静态资源(gstatic.com)、API接口(googleapis.com)等保证服务正常运行的基础设施。
+DOMAIN-SUFFIX,1e100.net
 DOMAIN-SUFFIX,abc.xyz
 DOMAIN-SUFFIX,android.com
-DOMAIN-SUFFIX,apigee.net
-DOMAIN-SUFFIX,app-measurement.com
-DOMAIN-SUFFIX,cloud.google.com
-DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,g.co
-DOMAIN-SUFFIX,g.page
-DOMAIN-SUFFIX,gcr.io
-DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,googlecnapps.cn
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,gstatic.com
+
+# --- 核心产品与服务 (13) ---
+# 功能：明确指定Chrome、Gmail、Play商店等用户常用产品的主域名，确保核心体验。
+# gvt1/gvt2/gvt3.com 是谷歌用于更新和下载服务的域名。
+DOMAIN-SUFFIX,chrome.com
+DOMAIN-SUFFIX,chromecast.com
+DOMAIN-SUFFIX,chromium.org
 DOMAIN-SUFFIX,gmail.com
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,googledrive.com
+DOMAIN-SUFFIX,googlemaps.com
+DOMAIN-SUFFIX,googlephotos.com
+DOMAIN-SUFFIX,googleplay.com
+DOMAIN-SUFFIX,googlestore.com
 DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,gvt2.com
 DOMAIN-SUFFIX,gvt3.com
-DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,play.google.com
+DOMAIN-SUFFIX,recaptcha.net
+DOMAIN-SUFFIX,widevine.com
+
+# --- 广告、分析与追踪平台 (12) ---
+# 功能：覆盖Google的广告网络(Doubleclick)、分析工具(Analytics)和崩溃报告(Crashlytics)等服务。
+DOMAIN-SUFFIX,2mdn.net
+DOMAIN-SUFFIX,admob.com
+DOMAIN-SUFFIX,adsense.com
+DOMAIN-SUFFIX,app-measurement.com
+DOMAIN-SUFFIX,crashlytics.com
+DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,google-analytics.com
 DOMAIN-SUFFIX,googleadservices.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,googlecnapps.cn
 DOMAIN-SUFFIX,googlesyndication.com
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googletagservices.com
-DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,urchin.com
+
+# --- 开发者与云服务 (9) ---
+# 功能：确保Google Cloud Platform (GCP)、Firebase、TensorFlow等开发者服务的流量被正确代理。
+DOMAIN-SUFFIX,cloud.google.com
+DOMAIN-SUFFIX,dart.dev
+DOMAIN-SUFFIX,firebaseapp.com
+DOMAIN-SESUFFIX,firebaseio.com
+DOMAIN-SUFFIX,flutter.dev
+DOMAIN-SUFFIX,gcr.io
+DOMAIN-SUFFIX,golang.org
+DOMAIN-SUFFIX,googlesource.com
+DOMAIN-SUFFIX,tensorflow.org
+
+# --- Alphabet 关联公司及收购业务 (7) ---
+# 功能：包含母公司Alphabet旗下的其他业务（如Waymo, Waze）以及Google历史上收购的公司域名。
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,nest.com
+DOMAIN-SUFFIX,picasa.com
 DOMAIN-SUFFIX,picasaweb.com
-DOMAIN-SUFFIX,play.google.com
-DOMAIN-SUFFIX,recaptcha.net
-DOMAIN-SUFFIX,trae.ai
-DOMAIN-SUFFIX,widevine.com
+DOMAIN-SUFFIX,waymo.com
+DOMAIN-SUFFIX,waze.com
+DOMAIN-SUFFIX,withgoogle.com
 
-USER-AGENT,Google*
-USER-AGENT,Googlebot*
-USER-AGENT,Googlebot-Image*
-USER-AGENT,Googlebot-News*
-USER-AGENT,Storebot-Google*
-USER-AGENT,Google-InspectionTool*
-USER-AGENT,GoogleOther*
-USER-AGENT,Google-CloudVertexBot*
-USER-AGENT,Android-Finsky*
-
+# --- 补充IP段 (兜底) (4) ---
+# 功能：通过IP地址作为最后的补充，捕获一些可能通过IP直接连接的服务，例如Google DNS。
 IP-CIDR,8.8.4.4/32
 IP-CIDR,8.8.8.8/32
 IP-CIDR,74.125.0.0/16
 IP-CIDR,172.217.0.0/16
-IP-CIDR,35.191.0.0/16
-IP-CIDR,130.211.0.0/22
-IP-CIDR,173.194.0.0/16
-IP-CIDR,209.85.128.0/17
-IP-CIDR,216.58.192.0/19
-IP-CIDR,216.239.32.0/19
