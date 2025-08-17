@@ -1,0 +1,67 @@
+# NAME: Mate
+# AUTHOR: Ethan Tan (Enhanced by Expert Analysis)
+# DESCRIPTION: Meta服务综合分流规则，包含Facebook、Instagram、Threads、WhatsApp、Messenger和Oculus。
+# UPDATED: 2025-08-17 09:33:00
+# DOMAIN: 5
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 36
+# USER-AGENT: 6
+# TOTAL: 48
+
+DOMAIN,facebookmail.com
+DOMAIN,fb.me
+DOMAIN,meta.com
+DOMAIN,www.messenger.com
+DOMAIN,i.instagram.com
+
+DOMAIN-KEYWORD,facebook
+
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbcdn.org
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,instagr.am
+DOMAIN-SUFFIX,instagra.sh
+DOMAIN-SUFFIX,instagram.net
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-SUFFIX,threads.net
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-SUFFIX,threads-app.com
+DOMAIN-SUFFIX,threads.com
+DOMAIN-SUFFIX,wa.me
+DOMAIN-SUFFIX,whatsappbrand.com
+DOMAIN-SUFFIX,whatsapp-plus.info
+DOMAIN-SUFFIX,whatsapp-plus.me
+DOMAIN-SUFFIX,whatsapp-plus.net
+DOMAIN-SUFFIX,whatsapp.cc
+DOMAIN-SUFFIX,whatsapp.info
+DOMAIN-SUFFIX,whatsapp.org
+DOMAIN-SUFFIX,whatsapp.tv
+DOMAIN-SUFFIX,m.me
+DOMAIN-SUFFIX,msngr.com
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,oculus.xx.fbcdn.net
+DOMAIN-SUFFIX,oculus.fallback.xx.fbcdn.net
+DOMAIN-SUFFIX,oculusrift.com
+DOMAIN-SUFFIX,tfbnw.net
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,fbpigeon.com
+DOMAIN-SUFFIX,facebook-hardware.com
+DOMAIN-SUFFIX,connect.facebook.com
+DOMAIN-SUFFIX,connect.facebook.net
+DOMAIN-SUFFIX,graph-fallback.facebook.com
+DOMAIN-SUFFIX,z-m-graph.facebook.com
+DOMAIN-SUFFIX,graph-fallback.instagram.com
+
+USER-AGENT,Facebook*
+USER-AGENT,Instagram*
+USER-AGENT,Threads*
+USER-AGENT,WhatsApp*
+USER-AGENT,Messenger*
+USER-AGENT,Oculus*
+```
