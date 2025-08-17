@@ -1,7 +1,13 @@
 # NAME: Google
 # AUTHOR: Ethan Tan
 # DESCRIPTION: 谷歌核心服务分流规则，不包含YouTube。
-# UPDATED: 2025-08-17 08:44:57
+# UPDATED: 2025-08-17
+# DOMAIN: 17
+# DOMAIN-KEYWORD: 4
+# DOMAIN-SUFFIX: 28
+# USER-AGENT: 13
+# IP-CIDR: 24
+# TOTAL: 86
 
 DOMAIN,android.clients.google.com
 DOMAIN,dl.google.com
@@ -52,6 +58,8 @@ DOMAIN-SUFFIX,picasaweb.com
 DOMAIN-SUFFIX,recaptcha.net
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,googlemail.com
+DOMAIN-SUFFIX,trae.ai
+DOMAIN-SUFFIX,ttlive.ly
 
 USER-AGENT,Google*
 USER-AGENT,Googlebot*
