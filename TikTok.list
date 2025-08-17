@@ -1,17 +1,18 @@
 # NAME: TikTok
 # AUTHOR: Ethan Tan
-# DESCRIPTION: TikTok服务分流规则。
+# DESCRIPTION: TikTok服务分流规则，包含核心域名、API端点、CDN及字节跳动通用域名和IP范围。
 # UPDATED: 2025-08-17
-# DOMAIN: 3
+# DOMAIN: 4
 # DOMAIN-KEYWORD: 0
-# DOMAIN-SUFFIX: 6
-# USER-AGENT: 4
-# IP-CIDR: 0
-# TOTAL: 13
+# DOMAIN-SUFFIX: 22
+# USER-AGENT: 5
+# IP-CIDR: 11
+# TOTAL: 42
 
 DOMAIN,tiktok.com
 DOMAIN,tiktokmusic.app
 DOMAIN,ttwebview.com
+DOMAIN,open-api.tiktok.com
 
 DOMAIN-SUFFIX,tiktokv.com
 DOMAIN-SUFFIX,tiktokcdn-us.com
@@ -19,8 +20,37 @@ DOMAIN-SUFFIX,tiktokv.us
 DOMAIN-SUFFIX,tiktokcdn.com
 DOMAIN-SUFFIX,tiktokw.us
 DOMAIN-SUFFIX,tiktokcdn-eu.com
+DOMAIN-SUFFIX,open.tiktokapis.com
+DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,ibyteimg.com
+DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,i18n-pglstatp.com
+DOMAIN-SUFFIX,byteoversea.net
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,bytefcdn-oversea.com
+DOMAIN-SUFFIX,zijieapi.com
+DOMAIN-SUFFIX,api-h2.tiktokv.com
+DOMAIN-SUFFIX,log.tiktokv.com
+DOMAIN-SUFFIX,im-api.tiktok.com
+DOMAIN-SUFFIX,ads.tiktok.com
+DOMAIN-SUFFIX,api21-h2.tiktokv.com
+DOMAIN-SUFFIX,ib.tiktokv.com
+DOMAIN-SUFFIX,api.tiktokv.com
 
 USER-AGENT,TikTok App*
 USER-AGENT,musical_ly_*
 USER-AGENT,TikTokSpider*
+USER-AGENT,Bytespider*
 USER-AGENT,trill_*
+
+IP-CIDR,71.18.0.0/16
+IP-CIDR,101.45.0.0/16
+IP-CIDR,130.44.212.0/22
+IP-CIDR,139.177.224.0/19
+IP-CIDR,147.160.176.0/20
+IP-CIDR,192.64.14.0/23
+IP-CIDR,202.52.224.0/21
+IP-CIDR,2605:340::/35
+IP-CIDR,2404:9dc0::/33
+IP-CIDR,103.136.220.0/23
+IP-CIDR,118.26.132.0/24
