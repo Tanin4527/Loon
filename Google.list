@@ -1,24 +1,31 @@
-### **Google 核心服务分流规则（不含YouTube）**
-
-```
 # NAME: Google
 # AUTHOR: Ethan Tan
 # DESCRIPTION: 谷歌核心服务分流规则，不包含YouTube。
 # UPDATED: 2025-08-17 08:44:57
-# DOMAIN: 5
-# DOMAIN-KEYWORD: 2
-# DOMAIN-SUFFIX: 30
-# USER-AGENT: 1
-# IP-CIDR: 10
-# TOTAL: 48
 
 DOMAIN,android.clients.google.com
 DOMAIN,dl.google.com
 DOMAIN,fonts.googleapis.com
 DOMAIN,google.cn
 DOMAIN,www.google.com
+DOMAIN,gmail.com
+DOMAIN,drive.google.com
+DOMAIN,maps.googleapis.com
+DOMAIN,play.google.com
+DOMAIN,play.googleapis.com
+DOMAIN,assistant.google.com
+DOMAIN,pay.google.com
+DOMAIN,wallet.google.com
+DOMAIN,domains.googleapis.com
+DOMAIN,cloud.google.com
+DOMAIN,googleapis.l.google.com
+DOMAIN,clients.l.google.com
+
 DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,googlevideo
+DOMAIN-KEYWORD,googlemail
+DOMAIN-KEYWORD,googleusercontent
+
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,abc.xyz
 DOMAIN-SUFFIX,android.com
@@ -43,13 +50,23 @@ DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,picasaweb.com
 DOMAIN-SUFFIX,recaptcha.net
-DOMAIN-SUFFIX,tiktokmusic.app
-DOMAIN-SUFFIX,tiktokv.com
-DOMAIN-SUFFIX,tiktokv.us
-DOMAIN-SUFFIX,trae.ai
-DOMAIN-SUFFIX,ttlive.ly
-DOMAIN-SUFFIX,ttwebview.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,googlemail.com
+
 USER-AGENT,Google*
+USER-AGENT,Googlebot*
+USER-AGENT,Googlebot-Image*
+USER-AGENT,Googlebot-News*
+USER-AGENT,Storebot-Google*
+USER-AGENT,Google-InspectionTool*
+USER-AGENT,GoogleOther*
+USER-AGENT,Google-CloudVertexBot*
+USER-AGENT,*Gmail Actions*
+USER-AGENT,Android-Finsky*
+USER-AGENT,*Chrome*Mobile Safari*
+USER-AGENT,*Chrome*Safari*
+USER-AGENT,*Android*Xoom*
+
 IP-CIDR,8.8.4.4/32
 IP-CIDR,8.8.8.8/32
 IP-CIDR,34.0.0.0/8
@@ -60,4 +77,17 @@ IP-CIDR,66.102.0.0/20
 IP-CIDR,72.14.192.0/18
 IP-CIDR,74.125.0.0/16
 IP-CIDR,108.177.8.0/21
-```
+IP-CIDR,2001:4860:4860::8888/128
+IP-CIDR,2001:4860:4860::8844/128
+IP-CIDR,199.36.153.8/30
+IP-CIDR,34.126.0.0/18
+IP-CIDR,2600:2d00:0002:2000::/64
+IP-CIDR,2001:4860:8040::/42
+IP-CIDR,199.36.153.4/30
+IP-CIDR,2600:2d00:0002:1000::/64
+IP-CIDR,35.191.0.0/16
+IP-CIDR,130.211.0.0/22
+IP-CIDR,173.194.0.0/16
+IP-CIDR,209.85.128.0/17
+IP-CIDR,216.58.192.0/19
+IP-CIDR,216.239.32.0/19
