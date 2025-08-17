@@ -1,0 +1,20 @@
+# NAME: Google Ads & Track
+# AUTHOR: Tanin
+# DESCRIPTION: 用于屏蔽谷歌广告、分析和追踪的域名列表。建议在Loon中将此规则策略设置为 REJECT。
+# UPDATED: 2025-08-17
+# DOMAIN: 0
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 9
+# USER-AGENT: 0
+# IP-CIDR: 0
+# TOTAL: 9
+
+DOMAIN-SUFFIX,2mdn.net
+DOMAIN-SUFFIX,apigee.net
+DOMAIN-SUFFIX,app-measurement.com
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,google-analytics.com
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN-SUFFIX,googletagservices.com
