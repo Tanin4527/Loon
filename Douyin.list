@@ -1,0 +1,28 @@
+# NAME: Douyin
+# AUTHOR: Ethan Tan
+# DESCRIPTION: 抖音服务综合分流规则，包含其CDN、API及相关域名。
+# UPDATED: 2025-08-17 09:37:03
+# DOMAIN: 5
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 10
+# USER-AGENT: 1
+# PROCESS-NAME: 1
+# TOTAL: 18
+
+DOMAIN,amemv.com
+DOMAIN,p3-amemv.ibyteimg.com
+DOMAIN,p5-amemv.ibyteimg.com
+DOMAIN,v.douyin.com
+DOMAIN,www.douyin.com
+DOMAIN-KEYWORD,douyin
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,byte-dance.com
+DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,douyincdn.com
+DOMAIN-SUFFIX,feishucdn.com
+DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,snssdk.com
+USER-AGENT,aweme*
+PROCESS-NAME,com.ss.android.ugc.aweme
