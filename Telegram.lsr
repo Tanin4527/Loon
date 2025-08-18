@@ -1,0 +1,49 @@
+# NAME: Telegram (优化版)
+# AUTHOR: Tanin
+# UPDATED: 2025-08-18
+# DESCRIPTION: 全球消息应用 Telegram 的分流规则，优化后覆盖了核心服务、文件/图片CDN、机器人API以及第三方客户端等生态服务。
+# DOMAIN: 0
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 10
+# IP-CIDR: 18
+# TOTAL: 28
+
+# --- 核心服务与官方域名 ---
+# 功能：覆盖Telegram官方网站、App内网页预览和短链接服务。
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,telegram.me
+DOMAIN-SUFFIX,telegram.dog
+DOMAIN-SUFFIX,tg.dev
+DOMAIN-SUFFIX,t.me
+
+# --- 内容与CDN服务 (新增) ---
+# 功能：覆盖图片、视频、文件和贴纸等静态资源的CDN域名。
+DOMAIN-SUFFIX,telesco.pe
+DOMAIN-SUFFIX,telegra.ph
+
+# --- 机器人与第三方服务 (新增) ---
+# 功能：覆盖机器人API和知名的第三方客户端 (Nicegram) 服务。
+DOMAIN-SUFFIX,core.telegram.org
+DOMAIN-SUFFIX,nicegram.app
+DOMAIN-SUFFIX,prouser.me
+
+# --- 核心IP地址范围 (AS62041) ---
+# 功能：覆盖 Telegram 核心基础设施的IPv4和IPv6网络范围，用于消息、通话和文件传输。
+IP-CIDR,91.108.4.0/22
+IP-CIDR,91.108.8.0/21
+IP-CIDR,91.108.56.0/22
+IP-CIDR,95.161.64.0/20
+IP-CIDR,149.154.160.0/22
+IP-CIDR,149.154.162.0/23
+IP-CIDR,149.154.164.0/22
+IP-CIDR,149.154.166.0/23
+IP-CIDR,149.154.167.0/24
+IP-CIDR,149.154.171.0/24
+IP-CIDR,149.154.172.0/24
+IP-CIDR,149.154.175.0/24
+IP-CIDR,185.76.151.0/24
+IP-CIDR,45.43.186.0/24
+IP-CIDR,91.105.192.0/23
+IP-CIDR,2001:67c:4e8::/48
+IP-CIDR,2001:b28:f23c::/47
+IP-CIDR,2001:b28:f23f::/48
