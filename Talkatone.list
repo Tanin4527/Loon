@@ -1,0 +1,17 @@
+# NAME: Talkatone
+# AUTHOR: Tanin
+# UPDATED: 2025-08-18
+# DESCRIPTION: Talkatone 移动应用程序的核心分流规则，专注于其通信和API功能，移除了不必要的第三方和应用商店域名。
+# DOMAIN: 0
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 3
+# IP-CIDR: 0
+# TOTAL: 3
+
+# --- 核心服务域名 ---
+# 功能：覆盖App的核心功能、网站和API。
+DOMAIN-SUFFIX,talkatone.com
+
+# --- 母公司后台域名 (关键) ---
+# 功能：Pinger是Talkatone的母公司，大量后台服务、通话信令和认证都通过此域名，必须包含。
+DOMAIN-SUFFIX,pinger.com
