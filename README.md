@@ -12,10 +12,7 @@
 
 ## 自动更新（每周）
 
-GitHub Action（`.github/workflows/update-rules.yml`）每周一凌晨 03:00（北京时间）自动运行，一次跑完两个更新脚本，有变化才提交：
-
-- `scripts/update_meta.py`：从 RIPEstat 抓 Meta 的 AS32934 实时公布 IP 段、合并去重，与 `scripts/meta_domains.txt` 的核心域名一起重新生成 `Meta.list`。
-- `scripts/update_linuxdo.py`：从证书透明日志（crt.sh）抓 `linux.do` / `linuxdo.org` 最新子站清单，重新生成 `LinuxDO.list`；抓取源异常时中止、不动旧文件。
+GitHub Action（`.github/workflows/update-rules.yml`）每周一凌晨 03:00（北京时间）自动运行 `scripts/update_rules.py`（更新机器就这一个文件），有变化才提交：Meta 部分从 RIPEstat 抓 AS32934 实时公布 IP 段、合并去重，与脚本内嵌的核心域名一起重新生成 `Meta.list`；LinuxDO 部分从证书透明日志（crt.sh）抓 `linux.do` / `linuxdo.org` 最新子站清单重新生成 `LinuxDO.list`。抓取源异常时中止、不动旧文件。
 
 ## Loon 用法
 
