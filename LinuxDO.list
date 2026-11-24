@@ -5,7 +5,7 @@
 # Purpose: Force DIRECT for LINUX DO (linux.do / linuxdo.org) and its DoH,
 #          so L站不走代理。配合 ECH / 安全 DNS 直连使用。
 # Source: certificate transparency logs (crt.sh), refreshed weekly by
-#         scripts/update_linuxdo.py; DOMAIN-SUFFIX covers every
+#         scripts/update_rules.py; DOMAIN-SUFFIX covers every
 #         subdomain whether it is listed below or not.
 # Version: 2026-11-24 (auto)
 # Usage (Loon):
