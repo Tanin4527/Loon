@@ -1,0 +1,21 @@
+# =========================================================================
+# Rule Name: Manus Split Routing
+# Author: Tanin4527
+# Target App: Loon / Surge / Quantumult X compatible (ruleset, no policy)
+# Purpose: Manus (含 Cue) 域名清单。Manus 曾于 2025 年底被 Meta 收购,
+#          2026 年 4 月交易被叫停撤销, 现为独立公司, 故不并入 Meta.list,
+#          单独一份。本文件不带策略, 由引用方指定 policy。
+# Usage (Loon):
+#   [Remote Rule]
+#   https://raw.githubusercontent.com/Tanin4527/Loon/main/Manus.list, policy=<你的策略组>, tag=Manus, enabled=true
+# Version: 2026-11-25
+# =========================================================================
+
+# === Manus 主站 / 帮助中心 (help.manus.im 等子域全覆盖) ===
+DOMAIN-SUFFIX,manus.im
+
+# === Cue (Manus 的个人 Agent 应用) ===
+DOMAIN-SUFFIX,cue.im
+
+# === Manus 给用户部署的网站 (*.manus.space) ===
+DOMAIN-SUFFIX,manus.space
