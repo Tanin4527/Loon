@@ -33,6 +33,7 @@ META_DOMAINS = """\
 # === Meta / 公司主域 ===
 DOMAIN-SUFFIX,meta.com
 DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,muse.ai
 DOMAIN-SUFFIX,metaquest.com
 DOMAIN-SUFFIX,accountkit.com
 DOMAIN-SUFFIX,crowdtangle.com
