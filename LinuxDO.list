@@ -1,0 +1,81 @@
+# =========================================================================
+# Rule Name: LINUX DO Direct
+# Author: Tanin4527
+# Target App: Loon / Surge / Quantumult X compatible
+# Purpose: Force DIRECT for LINUX DO (linux.do / linuxdo.org) and its DoH,
+#          so L站不走代理。配合 ECH / 安全 DNS 直连使用。
+# Source: certificate transparency logs (crt.sh), refreshed weekly by
+#         scripts/update_linuxdo.py; DOMAIN-SUFFIX covers every
+#         subdomain whether it is listed below or not.
+# Version: 2026-11-24 (auto)
+# Usage (Loon):
+#   [Remote Rule]
+#   https://raw.githubusercontent.com/Tanin4527/Loon/main/LinuxDO.list, policy=DIRECT, tag=LINUX DO, enabled=true
+#   注意: 把这条放在 [Remote Rule] 最前面, 在 FINAL / GEOIP,CN 之前生效。
+# =========================================================================
+
+# === LINUX DO 主站及全部子站 (DOMAIN-SUFFIX 整段覆盖) ===
+DOMAIN-SUFFIX,linux.do,DIRECT
+DOMAIN,linux.do,DIRECT
+
+# === crt.sh 本周发现的 linux.do 子站 (显式清单, 后缀规则已覆盖) ===
+DOMAIN,2048.linux.do,DIRECT
+DOMAIN,ads.linux.do,DIRECT
+DOMAIN,android.linux.do,DIRECT
+DOMAIN,autoconfig.linux.do,DIRECT
+DOMAIN,autodiscover.linux.do,DIRECT
+DOMAIN,axxx.linux.do,DIRECT
+DOMAIN,blog.linux.do,DIRECT
+DOMAIN,cdk.linux.do,DIRECT
+DOMAIN,cdn.linux.do,DIRECT
+DOMAIN,cdn3.linux.do,DIRECT
+DOMAIN,check.linux.do,DIRECT
+DOMAIN,cname.linux.do,DIRECT
+DOMAIN,connect.linux.do,DIRECT
+DOMAIN,credit.linux.do,DIRECT
+DOMAIN,docker-gcr.linux.do,DIRECT
+DOMAIN,docker-ghcr.linux.do,DIRECT
+DOMAIN,docker-hub.linux.do,DIRECT
+DOMAIN,docker-ui.linux.do,DIRECT
+DOMAIN,go.linux.do,DIRECT
+DOMAIN,hub.linux.do,DIRECT
+DOMAIN,imap.linux.do,DIRECT
+DOMAIN,ios.linux.do,DIRECT
+DOMAIN,linux-vscode-me.linux.do,DIRECT
+DOMAIN,lottery.linux.do,DIRECT
+DOMAIN,mail.linux.do,DIRECT
+DOMAIN,mta-sts.linux.do,DIRECT
+DOMAIN,nav.linux.do,DIRECT
+DOMAIN,nm.linux.do,DIRECT
+DOMAIN,ping.linux.do,DIRECT
+DOMAIN,pop.linux.do,DIRECT
+DOMAIN,pop3.linux.do,DIRECT
+DOMAIN,pow.linux.do,DIRECT
+DOMAIN,rate.linux.do,DIRECT
+DOMAIN,s3.linux.do,DIRECT
+DOMAIN,smtp.linux.do,DIRECT
+DOMAIN,static.linux.do,DIRECT
+DOMAIN,status.linux.do,DIRECT
+DOMAIN,t191.linux.do,DIRECT
+DOMAIN,tchk.linux.do,DIRECT
+DOMAIN,tmp.linux.do,DIRECT
+DOMAIN,uptime.linux.do,DIRECT
+DOMAIN,webmail.linux.do,DIRECT
+DOMAIN,webmail1.linux.do,DIRECT
+DOMAIN,wiki.linux.do,DIRECT
+DOMAIN,www.linux.do,DIRECT
+
+# === LINUX DO 备用域名及全部子站 ===
+DOMAIN-SUFFIX,linuxdo.org,DIRECT
+DOMAIN,linuxdo.org,DIRECT
+
+# === crt.sh 本周发现的 linuxdo.org 子站 ===
+DOMAIN,mail.linuxdo.org,DIRECT
+DOMAIN,meet.linuxdo.org,DIRECT
+DOMAIN,www.linuxdo.org,DIRECT
+
+# === 直连 DoH (oaifree)，否则 DoH 本身走了代理会解析失败 ===
+DOMAIN-SUFFIX,oaifree.com,DIRECT
+DOMAIN,ld.ddd.oaifree.com,DIRECT
+
+# End of LINUX DO rules - place this RULE-SET at the VERY TOP of your [Rule] section
