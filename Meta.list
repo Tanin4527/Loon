@@ -5,7 +5,7 @@
 # Purpose: Meta 全家桶 (Facebook / Instagram / Threads / WhatsApp /
 #          Messenger / Oculus / Meta AI) 域名与 IP 段清单。
 #          本文件不带策略, 由引用方指定 policy。IP 段每周由
-#          scripts/update_meta.py 从 RIPEstat (AS32934) 自动更新。
+#          scripts/update_rules.py 从 RIPEstat (AS32934) 自动更新。
 # Usage (Loon):
 #   [Remote Rule]
 #   https://raw.githubusercontent.com/Tanin4527/Loon/main/Meta.list, policy=<你的策略组>, tag=Meta, enabled=true
