@@ -1,0 +1,104 @@
+# =========================================================================
+# Rule Name: Meta Split Routing
+# Author: Tanin4527
+# Target App: Loon / Surge / Quantumult X compatible (ruleset, no policy)
+# Purpose: Meta 全家桶 (Facebook / Instagram / Threads / WhatsApp /
+#          Messenger / Oculus / Meta AI) 域名与 IP 段清单。
+#          本文件不带策略, 由引用方指定 policy。IP 段每周由
+#          scripts/update_meta.py 从 RIPEstat (AS32934) 自动更新。
+# Usage (Loon):
+#   [Remote Rule]
+#   https://raw.githubusercontent.com/Tanin4527/Loon/main/Meta.list, policy=<你的策略组>, tag=Meta, enabled=true
+# Version: 2026-11-24 (auto)
+# =========================================================================
+
+# === Meta / 公司主域 ===
+DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,metaquest.com
+DOMAIN-SUFFIX,accountkit.com
+DOMAIN-SUFFIX,crowdtangle.com
+DOMAIN-SUFFIX,workplace.com
+DOMAIN-SUFFIX,expresswifi.com
+DOMAIN-SUFFIX,freebasics.com
+DOMAIN-SUFFIX,internet.org
+
+# === Facebook ===
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,facebook.org
+DOMAIN-SUFFIX,facebookmail.com
+DOMAIN-SUFFIX,facebookbrand.com
+DOMAIN-SUFFIX,fb.com
+DOMAIN-SUFFIX,fb.me
+DOMAIN-SUFFIX,fb.watch
+DOMAIN-SUFFIX,fb.gg
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbcdn.com
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,fbaddins.com
+DOMAIN-SUFFIX,fbworkmail.com
+DOMAIN-KEYWORD,facebook
+
+# === Instagram ===
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,ig.me
+DOMAIN-SUFFIX,instagram.net
+
+# === Threads ===
+DOMAIN-SUFFIX,threads.net
+DOMAIN-SUFFIX,threads.com
+
+# === Messenger ===
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,m.me
+
+# === WhatsApp ===
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-SUFFIX,whatsapp.biz
+DOMAIN-SUFFIX,whatsappbrand.com
+DOMAIN-SUFFIX,wa.me
+
+# === Oculus / VR ===
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-SUFFIX,oculuscdn.com
+
+# === Meta IP 段 (AS32934, RIPEstat 每周自动抓取) ===
+IP-CIDR,31.13.24.0/21,no-resolve
+IP-CIDR,31.13.64.0/18,no-resolve
+IP-CIDR,45.64.40.0/22,no-resolve
+IP-CIDR,57.141.0.0/24,no-resolve
+IP-CIDR,57.141.2.0/23,no-resolve
+IP-CIDR,57.141.4.0/23,no-resolve
+IP-CIDR,57.141.6.0/24,no-resolve
+IP-CIDR,57.141.8.0/24,no-resolve
+IP-CIDR,57.141.10.0/24,no-resolve
+IP-CIDR,57.141.12.0/23,no-resolve
+IP-CIDR,57.141.14.0/24,no-resolve
+IP-CIDR,57.141.16.0/22,no-resolve
+IP-CIDR,57.141.20.0/24,no-resolve
+IP-CIDR,57.141.22.0/24,no-resolve
+IP-CIDR,57.141.24.0/24,no-resolve
+IP-CIDR,57.144.0.0/14,no-resolve
+IP-CIDR,66.220.144.0/20,no-resolve
+IP-CIDR,69.63.176.0/20,no-resolve
+IP-CIDR,69.171.224.0/19,no-resolve
+IP-CIDR,74.119.76.0/22,no-resolve
+IP-CIDR,102.132.96.0/20,no-resolve
+IP-CIDR,103.4.96.0/22,no-resolve
+IP-CIDR,129.134.0.0/17,no-resolve
+IP-CIDR,157.240.0.0/17,no-resolve
+IP-CIDR,157.240.192.0/18,no-resolve
+IP-CIDR,163.70.128.0/17,no-resolve
+IP-CIDR,163.77.132.0/23,no-resolve
+IP-CIDR,163.77.136.0/23,no-resolve
+IP-CIDR,163.77.160.0/20,no-resolve
+IP-CIDR,173.252.64.0/18,no-resolve
+IP-CIDR,179.60.192.0/22,no-resolve
+IP-CIDR,185.60.216.0/22,no-resolve
+IP-CIDR,185.89.216.0/22,no-resolve
+IP-CIDR,204.15.20.0/22,no-resolve
+IP-CIDR6,2620:0:1c00::/40,no-resolve
+IP-CIDR6,2a03:2880::/32,no-resolve
