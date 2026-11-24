@@ -3,7 +3,7 @@
 
 Author: Tanin4527. One file does both jobs:
 
-1. Meta.list - Meta (AS32934) announced prefixes fetched live from
+1. Meta.list - Meta (AS32934 + AS63293) announced prefixes fetched live from
    RIPEstat (https://stat.ripe.net), collapsed to the exact announced
    union, combined with the curated core domains in META_DOMAINS below.
 2. LinuxDO.list - current *.linux.do / *.linuxdo.org hostnames discovered
@@ -26,7 +26,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-RIPESTAT = "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS32934"
+META_ASNS = ("AS32934", "AS63293")  # AS32934 main + AS63293 FACEBOOK-OFFNET (FNA edge)
 
 # Meta curated core domains (no policy attached; edit here to add domains).
 META_DOMAINS = """\
@@ -62,6 +62,7 @@ DOMAIN-KEYWORD,facebook
 # === Instagram ===
 DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,instagr.am
 DOMAIN-SUFFIX,ig.me
 DOMAIN-SUFFIX,instagram.net
 
@@ -102,10 +103,13 @@ def write_if_changed(path, content):
 # ---------------------------------------------------------------- Meta ---
 
 def fetch_meta_prefixes():
-    req = urllib.request.Request(RIPESTAT, headers={"User-Agent": "loon-rules-updater/1.0"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        data = json.load(resp)
-    prefixes = [p["prefix"] for p in data["data"]["prefixes"]]
+    prefixes = []
+    for asn in META_ASNS:
+        url = f"https://stat.ripe.net/data/announced-prefixes/data.json?resource={asn}"
+        req = urllib.request.Request(url, headers={"User-Agent": "loon-rules-updater/1.0"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.load(resp)
+        prefixes += [p["prefix"] for p in data["data"]["prefixes"]]
     v4 = [ipaddress.ip_network(p) for p in prefixes if ":" not in p]
     v6 = [ipaddress.ip_network(p) for p in prefixes if ":" in p]
     if len(v4) < 10 or len(v6) < 1:
@@ -127,7 +131,7 @@ def build_meta_list(today):
         "# Purpose: Meta 全家桶 (Facebook / Instagram / Threads / WhatsApp /",
         "#          Messenger / Oculus / Meta AI) 域名与 IP 段清单。",
         "#          本文件不带策略, 由引用方指定 policy。IP 段每周由",
-        "#          scripts/update_rules.py 从 RIPEstat (AS32934) 自动更新。",
+        "#          scripts/update_rules.py 从 RIPEstat (AS32934 + AS63293) 自动更新。",
         "# Usage (Loon):",
         "#   [Remote Rule]",
         "#   https://raw.githubusercontent.com/Tanin4527/Loon/main/Meta.list, policy=<你的策略组>, tag=Meta, enabled=true",
@@ -136,7 +140,7 @@ def build_meta_list(today):
         "",
         META_DOMAINS,
         "",
-        "# === Meta IP 段 (AS32934, RIPEstat 每周自动抓取) ===",
+        "# === Meta IP 段 (AS32934 + AS63293, RIPEstat 每周自动抓取) ===",
         *ip_lines,
         "",
     ])
