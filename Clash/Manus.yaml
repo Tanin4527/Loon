@@ -1,0 +1,5 @@
+# Manus Split Routing (Clash / mihomo rule-provider, behavior: classical)
+payload:
+  - DOMAIN-SUFFIX,manus.im
+  - DOMAIN-SUFFIX,cue.im
+  - DOMAIN-SUFFIX,manus.space
