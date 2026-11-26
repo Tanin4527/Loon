@@ -3,6 +3,9 @@
 
 Author: Tanin4527. One file does both jobs:
 
+Repo layout: Loon/ holds the .list files, Clash/ the .yaml twins.
+This one script fetches once and regenerates both formats.
+
 1. Meta.list - Meta (AS32934 + AS63293) announced prefixes fetched live from
    RIPEstat (https://stat.ripe.net), collapsed to the exact announced
    union, combined with the curated core domains in META_DOMAINS below.
@@ -100,6 +103,22 @@ def write_if_changed(path, content):
     return True
 
 
+def to_clash_yaml(list_text, title):
+    """Convert a rule list to a Clash (mihomo) classical rule-provider
+    YAML: rules under payload:, trailing ,DIRECT stripped (providers
+    carry no policy)."""
+    rules = []
+    for line in list_text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.endswith(",DIRECT"):
+            line = line[: -len(",DIRECT")]
+        rules.append(line)
+    body = "\n".join(f"  - {r}" for r in rules)
+    return f"# {title} (Clash / mihomo rule-provider, behavior: classical)\npayload:\n{body}\n"
+
+
 # ---------------------------------------------------------------- Meta ---
 
 def fetch_meta_prefixes():
@@ -134,7 +153,7 @@ def build_meta_list(today):
         "#          scripts/update_rules.py 从 RIPEstat (AS32934 + AS63293) 自动更新。",
         "# Usage (Loon):",
         "#   [Remote Rule]",
-        "#   https://raw.githubusercontent.com/Tanin4527/Loon/main/Meta.list, policy=<你的策略组>, tag=Meta, enabled=true",
+        "#   https://raw.githubusercontent.com/Tanin4527/Loon/main/Loon/Meta.list, policy=<你的策略组>, tag=Meta, enabled=true",
         f"# Version: {today} (auto)",
         "# =========================================================================",
         "",
@@ -209,7 +228,7 @@ def build_linuxdo_list(today):
         f"# Version: {today} (auto)",
         "# Usage (Loon):",
         "#   [Remote Rule]",
-        "#   https://raw.githubusercontent.com/Tanin4527/Loon/main/LinuxDO.list, policy=DIRECT, tag=LINUX DO, enabled=true",
+        "#   https://raw.githubusercontent.com/Tanin4527/Loon/main/Loon/LinuxDO.list, policy=DIRECT, tag=LINUX DO, enabled=true",
         "#   注意: 把这条放在 [Remote Rule] 最前面, 在 FINAL / GEOIP,CN 之前生效。",
         "# =========================================================================",
         "",
@@ -243,9 +262,17 @@ def build_linuxdo_list(today):
 
 def main():
     today = date.today().isoformat()
+    loon_dir = ROOT / "Loon"
+    clash_dir = ROOT / "Clash"
+    meta_list = build_meta_list(today)
+    linuxdo_list = build_linuxdo_list(today)
+    manus_list = (loon_dir / "Manus.list").read_text(encoding="utf-8")
     changed = False
-    changed |= write_if_changed(ROOT / "Meta.list", build_meta_list(today))
-    changed |= write_if_changed(ROOT / "LinuxDO.list", build_linuxdo_list(today))
+    changed |= write_if_changed(loon_dir / "Meta.list", meta_list)
+    changed |= write_if_changed(loon_dir / "LinuxDO.list", linuxdo_list)
+    changed |= write_if_changed(clash_dir / "Meta.yaml", to_clash_yaml(meta_list, "Meta Split Routing"))
+    changed |= write_if_changed(clash_dir / "LinuxDO.yaml", to_clash_yaml(linuxdo_list, "LINUX DO Direct"))
+    changed |= write_if_changed(clash_dir / "Manus.yaml", to_clash_yaml(manus_list, "Manus Split Routing"))
     print("CHANGED" if changed else "NO_CHANGE")
     return 0
 
