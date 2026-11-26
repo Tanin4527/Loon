@@ -1,7 +1,7 @@
 name: Update rules (weekly)
 
 # Runs on GitHub's servers, Mondays 03:00 Asia/Shanghai.
-# Private-repo Actions free quota is 2,000 minutes/month (GitHub Free);
+# Public repo: standard GitHub Actions runners are free;
 # this job takes ~3 minutes per run, once a week (~12 minutes/month).
 
 on:
@@ -28,12 +28,12 @@ jobs:
 
       - name: Commit if changed
         run: |
-          if git diff --quiet -- Meta.list LinuxDO.list; then
+          if git diff --quiet -- Loon Clash; then
             echo "No rule changes this week."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Meta.list LinuxDO.list
+          git add Loon Clash
           git commit -m "chore: weekly rules update ($(date -u +%F))"
           git push
